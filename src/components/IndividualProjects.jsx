@@ -10,7 +10,7 @@ const IndividualProjects = (props) => {
           {props.projectimage}
         </div>
 
-        <div className="flex-1 font-manrope py-10">
+        <div className="flex-1 font-manrope py-10 pl-36">
           <h1 className="text-[2rem] font-medium text-[#FFFFFF] pb-7">
             {props.projectname}
           </h1>

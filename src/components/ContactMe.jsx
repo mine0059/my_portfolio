@@ -7,12 +7,12 @@ import Form from "./Form.jsx";
 
 const ContactMe = () => {
   return (
-    <section id="contact">
+    <section id="contact" className="pt-24">
       <div>
         <div className="px-24 py-14 border-b flex">
           <div className="flex flex-col justify-between flex-1">
             <div>
-              <h1 className="font-bebas text-[4.75rem] text-[#FFFFFF]">
+              <h1 className="font-bebas text-[4.75rem] text-[#FFFFFF] leading-none">
                 LET'S CONNECT
               </h1>
 

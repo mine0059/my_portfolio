@@ -1,12 +1,13 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const AboutMe = () => {
   return (
-    <section id="about">
+    <section id="about" className="pt-24">
       <div>
-        <div className="px-24 py-14 border-b border-b-[#484848] flex items-start justify-between gap-12">
+        <div className="px-24 py-14 border-b border-b-[#484848] flex pb-36">
           <div className="flex-1">
-            <h1 className="font-bebas text-[#FFFFFF] text-[6.3125rem]">
+            <h1 className="font-bebas text-[#FFFFFF] text-[6.3125rem] leading-none">
               ABOUT ME
             </h1>
           </div>
@@ -41,29 +42,34 @@ const AboutMe = () => {
               <button className="text-[#ffffff] font-manrope font-bold px-10 py-5 rounded-[6.25rem] border border-[#484848]">
                 HTML
               </button>
+
               <button className="text-[#ffffff] font-manrope font-bold px-10 py-5 rounded-[6.25rem] border border-[#484848]">
                 CSS
               </button>
+
               <button className="text-[#ffffff] font-manrope font-bold px-10 py-5 rounded-[6.25rem] border border-[#484848]">
                 JAVASCRIPT
               </button>
+
               <button className="text-[#ffffff] font-manrope font-bold px-10 py-5 rounded-[6.25rem] border border-[#484848]">
                 REACT
               </button>
+
               <button className="text-[#ffffff] font-manrope font-bold px-10 py-5 rounded-[6.25rem] border border-[#484848]">
                 FIGMA
               </button>
+
               <button className="text-[#ffffff] font-manrope font-bold px-10 py-5 rounded-[6.25rem] border border-[#484848]">
                 TAILWIND CSS
               </button>
             </div>
 
-            <a
-              href="#"
+            <Link
+              to="/more-about-me"
               className="text-[#D3E97A] font-manrope font-bold underline underline-offset-6"
             >
               MORE ABOUT ME
-            </a>
+            </Link>
           </div>
         </div>
       </div>

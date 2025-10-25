@@ -4,14 +4,25 @@ import Projects from "./components/Projects";
 import AboutMe from "./components/AboutMe";
 import ContactMe from "./components/ContactMe";
 import MoreAboutMe from "./components/MoreAboutMe";
+import { Route, Routes } from "react-router-dom";
 
 const App = () => {
   return (
     <div className="bg-[#0A0A0A] min-h-screen">
-      <Navbar />
-      <Projects />
-      <AboutMe />
-      <ContactMe />
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <Navbar />
+              <Projects />
+              <AboutMe />
+              <ContactMe />
+            </>
+          }
+        />
+        <Route path="/more-about-me" element={<MoreAboutMe />} />
+      </Routes>
     </div>
   );
 };
