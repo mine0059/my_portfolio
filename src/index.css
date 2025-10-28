@@ -64,6 +64,7 @@ textarea:focus {
   input,
   textarea {
     padding: 10px 16px;
+    width: 100%;
   }
 }
 

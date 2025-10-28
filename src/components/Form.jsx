@@ -61,7 +61,7 @@ const Form = () => {
   };
 
   return (
-    <div className="pt-20 md:pt-0">
+    <div className="pt-20 md:pt-0 overflow-hidden">
       <form
         onSubmit={handleSubmit}
         className="flex flex-col gap-4 md:gap-6 overflow-hidden"
