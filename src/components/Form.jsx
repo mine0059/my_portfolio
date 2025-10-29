@@ -119,7 +119,7 @@ const Form = () => {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="bg-[#D3E97A] text-[#0A0A0A] font-manrope font-bold px-10 py-5 rounded-[6.25rem] w-fit cursor-pointer mt-3 md:mt-0"
+          className="bg-[#D3E97A] text-[#0A0A0A] font-manrope font-bold px-10 py-5 rounded-[6.25rem] w-fit cursor-pointer mt-3 md:mt-0 hover:bg-[#AFCF55]"
         >
           {isSubmitting ? "Sending..." : "SUBMIT"}
         </button>

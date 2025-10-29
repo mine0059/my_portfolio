@@ -29,7 +29,12 @@ const MoreAboutMe = () => {
   };
 
   return (
-    <div className="bg-[#0A0A0A] text-[#C7C7C7] min-h-screen text-justify">
+    <motion.div
+      className="bg-[#0A0A0A] text-[#C7C7C7] min-h-screen text-justify"
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+    >
       <div className="fixed top-0 left-0 w-full z-50 bg-[#0A0A0A] px-6 md:px-14 py-6 flex justify-between items-center">
         <Link
           to="/"
@@ -111,7 +116,12 @@ const MoreAboutMe = () => {
       </AnimatePresence>
 
       <div className="px-6 md:px-12 pt-40 border-b border-b-[#484848]">
-        <div className="flex flex-col md:flex-row pb-20">
+        <motion.div
+          className="flex flex-col md:flex-row pb-20"
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.3 }}
+        >
           <div className="flex-1">
             <h1 className="text-[3.5rem] md:text-[6.3125rem] pb-4 text-[#FFFFFF] font-bebas leading-none">
               About me
@@ -135,7 +145,10 @@ const MoreAboutMe = () => {
             </p>
 
             <div className="flex gap-3 pt-6">
-              <a href="">
+              <a
+                href=""
+                className="transform transition duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] hover:scale-105 active:scale-95"
+              >
                 <img src={DownloadResume} alt="download resume" />
               </a>
 
@@ -143,6 +156,7 @@ const MoreAboutMe = () => {
                 href="http://www.linkedin.com/in/chisom-chukwuma-80b033205"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="transform transition duration-300 ease-out hover:scale-110 hover:-rotate-3 active:scale-90"
               >
                 <img src={LinkedIn} alt="My LinkedIn" />
               </a>
@@ -151,23 +165,29 @@ const MoreAboutMe = () => {
                 href="https://github.com/CoderBlack25"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="transform transition duration-300 ease-out hover:scale-110 hover:-rotate-3 active:scale-90"
               >
                 <img src={GitHub} alt="My Github" />
               </a>
             </div>
           </div>
-        </div>
+        </motion.div>
 
-        <div className="flex justify-center items-center pb-24">
+        <motion.div
+          className="flex justify-center items-center pb-24"
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+        >
           <img src={HeroImage} alt="hero image" className="w-full h-auto" />
-        </div>
+        </motion.div>
 
         <MyCapabilities />
       </div>
 
       <Experience />
       <ContactMe />
-    </div>
+    </motion.div>
   );
 };
 

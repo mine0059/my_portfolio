@@ -1,87 +1,142 @@
 import React from "react";
+// eslint-disable-next-line no-unused-vars
+import { motion } from "framer-motion";
 import LinkedInLogo from "../assets/bxl-linkedin.svg.svg";
 import GithubLogo from "../assets/bxl-github.svg (1).svg";
 import Twitter from "../assets/bxl-linkedin.svg (1).svg";
 import Instagram from "../assets/bxl-instagram.svg.svg";
 import Form from "./Form.jsx";
 
+const fadeUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } },
+};
+
 const ContactMe = () => {
   return (
     <section id="contact" className="pt-20">
-      <div>
-        <div className="px-6 md:px-24 py-14 md:flex">
-          <div className="flex flex-col flex-1">
-            <div>
-              <h1 className="font-bebas text-[2.6875rem] pb-8 md:text-[4.75rem] text-[#FFFFFF] leading-none">
-                LET'S CONNECT
-              </h1>
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ staggerChildren: 0.2 }}
+        className="px-6 md:px-24 py-14 md:flex"
+      >
+        <motion.div
+          variants={fadeUp}
+          className="flex flex-col flex-1 space-y-4 md:space-y-6"
+        >
+          <motion.h1
+            variants={fadeUp}
+            className="font-bebas text-[2.6875rem] pb-4 md:text-[4.75rem] text-[#FFFFFF] leading-none"
+          >
+            LET'S CONNECT
+          </motion.h1>
 
-              <p className="font-manrope text-base md:text-lg text-[#C7C7C7]">
-                Say hello at {""}
-                <a
-                  href="#"
-                  className="text-[#FFFFFF] underline underline-offset-6 decoration-[#D3E97A]"
-                >
-                  koderblac@gmail.com
-                </a>
-              </p>
+          <motion.p
+            variants={fadeUp}
+            className="font-manrope text-base md:text-lg text-[#C7C7C7]"
+          >
+            Say hello at{" "}
+            <motion.div
+              className="inline-block"
+              whileHover={{
+                scaleX: 1.05,
+                originX: 0,
+                color: "#e4ff83",
+              }}
+              transition={{ type: "spring", stiffness: 200 }}
+            >
+              {" "}
+              <a
+                href="mailto:koderblac@gmail.com"
+                className="text-[#FFFFFF] underline underline-offset-6 decoration-[#D3E97A]"
+              >
+                koderblac@gmail.com
+              </a>
+            </motion.div>
+          </motion.p>
 
-              <p className="font-manrope text-base md:text-lg text-[#C7C7C7]">
-                For more info, here's my{" "}
-                <a
-                  href="#"
-                  className="text-[#FFFFFF] underline underline-offset-6 decoration-[#D3E97A]"
-                >
-                  resume
-                </a>
-              </p>
+          <motion.p
+            variants={fadeUp}
+            className="font-manrope text-base md:text-lg text-[#C7C7C7]"
+          >
+            For more info, here's my{" "}
+            <motion.div
+              className="inline-block"
+              whileHover={{
+                scaleX: 1.05,
+                originX: 0,
+                color: "#e4ff83",
+              }}
+              transition={{ type: "spring", stiffness: 200 }}
+            >
+              {" "}
+              <a
+                href="mailto:koderblac@gmail.com"
+                className="text-[#FFFFFF] underline underline-offset-6 decoration-[#D3E97A]"
+              >
+                resume
+              </a>
+            </motion.div>
+          </motion.p>
 
-              <div className="flex gap-9 md:gap-6 pt-10">
-                <a
-                  href="http://www.linkedin.com/in/chisom-chukwuma-80b033205"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img src={LinkedInLogo} alt="" />
-                </a>
+          <motion.div variants={fadeUp} className="flex gap-9 md:gap-6 pt-10">
+            {[
+              {
+                href: "http://www.linkedin.com/in/chisom-chukwuma-80b033205",
+                img: LinkedInLogo,
+                alt: "LinkedIn",
+              },
+              {
+                href: "https://github.com/CoderBlack25",
+                img: GithubLogo,
+                alt: "GitHub",
+              },
+              {
+                href: "https://x.com/koder_blac",
+                img: Twitter,
+                alt: "Twitter",
+              },
+              {
+                href: "https://www.instagram.com/koder_blac/",
+                img: Instagram,
+                alt: "Instagram",
+              },
+            ].map((social, index) => (
+              <motion.a
+                key={index}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{
+                  scale: 1.2,
+                  rotate: 8,
+                }}
+                whileTap={{ scale: 0.9 }}
+                transition={{ type: "spring", stiffness: 200 }}
+              >
+                <img src={social.img} alt={social.alt} />
+              </motion.a>
+            ))}
+          </motion.div>
+        </motion.div>
 
-                <a
-                  href="https://github.com/CoderBlack25"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img src={GithubLogo} alt="" />
-                </a>
+        <motion.div variants={fadeUp}>
+          <Form />
+        </motion.div>
+      </motion.div>
 
-                <a
-                  href="https://x.com/koder_blac"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img src={Twitter} alt="" />
-                </a>
-
-                <a
-                  href="https://www.instagram.com/koder_blac/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img src={Instagram} alt="" />
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div>
-            <Form />
-          </div>
-        </div>
-        <div>
-          <p className="text-[#C7C7C7] font-manrope pl-6 md:pl-24 py-20">
-            © 2025 KoderBlac
-          </p>
-        </div>
-      </div>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+      >
+        <p className="text-[#C7C7C7] font-manrope pl-6 md:pl-24 py-20 text-left">
+          © 2025 KoderBlac
+        </p>
+      </motion.div>
     </section>
   );
 };
