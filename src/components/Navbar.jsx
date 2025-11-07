@@ -134,7 +134,7 @@ const Navbar = () => {
           KODERBLAC.
         </motion.h1>
 
-        <motion.p
+        <motion.div
           className="text-[#C7C7C7] font-manrope text-base md:text-lg my-2 md:my-4"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -142,7 +142,7 @@ const Navbar = () => {
         >
           <p>A Nigeria-based front-end developer passionate about</p>
           <p>building accessible and user friendly web products.</p>
-        </motion.p>
+        </motion.div>
 
         <motion.div
           className="flex gap-3 flex-wrap justify-center mt-6"
