@@ -41,14 +41,6 @@ const Projects = () => {
           transition={{ delay: 0.6, duration: 0.7 }}
         >
           Here are some of the selected projects that showcase my passion for
-        </motion.p>
-
-        <motion.p
-          className="text-base md:text-lg font-manrope text-[#C7C7C7]"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.8, duration: 0.7 }}
-        >
           front-end development.
         </motion.p>
 
@@ -83,8 +75,8 @@ const Projects = () => {
                   className="max-w-full max-h-full object-contain"
                 />
               }
-              demoLink="https://zeefas.com/"
-              githubLink="https://sedo.com/us/"
+              // demoLink=""
+              // githubLink=""
             />
           </motion.div>
 

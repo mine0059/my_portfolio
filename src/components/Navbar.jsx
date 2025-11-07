@@ -140,7 +140,7 @@ const Navbar = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          A Nigeria-based front-end developer passionate about{" "}
+          <p>A Nigeria-based front-end developer passionate about</p>
           <p>building accessible and user friendly web products.</p>
         </motion.p>
 
