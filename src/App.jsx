@@ -5,6 +5,7 @@ import AboutMe from "./components/AboutMe";
 import ContactMe from "./components/ContactMe";
 import MoreAboutMe from "./components/MoreAboutMe";
 import { Route, Routes } from "react-router-dom";
+import AllProjects from "./pages/AllProjects";
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
           }
         />
         <Route path="/more-about-me" element={<MoreAboutMe />} />
+        <Route path="/projects" element={<AllProjects />} />
       </Routes>
     </div>
   );

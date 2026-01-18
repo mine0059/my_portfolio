@@ -52,7 +52,7 @@ const ContactMe = () => {
                 href="mailto:koderblac@gmail.com"
                 className="text-[#FFFFFF] underline underline-offset-6 decoration-[#D3E97A]"
               >
-                koderblac@gmail.com
+                oghenemineemma@gmail.com
               </a>
             </motion.div>
           </motion.p>
@@ -73,7 +73,7 @@ const ContactMe = () => {
             >
               {" "}
               <a
-                href="mailto:koderblac@gmail.com"
+                href="mailto:oghenemineemma@gmail.com"
                 className="text-[#FFFFFF] underline underline-offset-6 decoration-[#D3E97A]"
               >
                 resume
@@ -84,22 +84,22 @@ const ContactMe = () => {
           <motion.div variants={fadeUp} className="flex gap-9 md:gap-6 pt-10">
             {[
               {
-                href: "http://www.linkedin.com/in/chisom-chukwuma-80b033205",
+                href: "https://www.linkedin.com/in/emmanuelmine/",
                 img: LinkedInLogo,
                 alt: "LinkedIn",
               },
               {
-                href: "https://github.com/CoderBlack25",
+                href: "https://github.com/mine0059",
                 img: GithubLogo,
                 alt: "GitHub",
               },
               {
-                href: "https://x.com/koder_blac",
+                href: "https://x.com/Ommanuel_",
                 img: Twitter,
                 alt: "Twitter",
               },
               {
-                href: "https://www.instagram.com/koder_blac/",
+                href: "#",
                 img: Instagram,
                 alt: "Instagram",
               },
@@ -134,7 +134,7 @@ const ContactMe = () => {
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
         <p className="text-[#C7C7C7] font-manrope pl-6 md:pl-24 py-20 text-left">
-          © 2025 KoderBlac
+          © 2025 Emmanuel Mine. All rights reserved.
         </p>
       </motion.div>
     </section>

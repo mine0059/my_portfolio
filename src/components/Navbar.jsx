@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 // eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from "framer-motion";
-import MyImage from "../assets/chisom.png";
+// import MyImage from "../assets/chisom.png";
+import MyImage from "../assets/mine.png";
 import LinkedIn from "../assets/Frame 3.svg";
 import GitHub from "../assets/Frame 4.svg";
 import Button from "../assets/button.svg";
@@ -34,7 +35,7 @@ const Navbar = () => {
           onClick={handleHomeClick}
           className="font-bebas text-[1.75rem] md:text-[2rem]"
         >
-          KODERBLAC
+          Mine
         </Link>
 
         <button
@@ -110,7 +111,7 @@ const Navbar = () => {
         <motion.img
           src={MyImage}
           alt="My Image"
-          className="mb-8 w-19.25 md:w-auto"
+          className="mb-8 w-24 md:w-36 h-auto"
           initial={{ scale: 0.9, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
@@ -131,7 +132,7 @@ const Navbar = () => {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          KODERBLAC.
+          Oghenemine.
         </motion.h1>
 
         <motion.div
@@ -140,8 +141,8 @@ const Navbar = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          <p>A Nigeria-based front-end developer passionate </p>
-          <p>about building accessible and user friendly web products.</p>
+          <p>A Nigeria-based software engineer passionate </p>
+          <p>about building accessible and user friendly Mobile application.</p>
         </motion.div>
 
         <motion.div

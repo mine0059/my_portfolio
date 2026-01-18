@@ -6,7 +6,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import DownloadResume from "../assets/button (1).svg";
 import LinkedIn from "../assets/Frame 3.svg";
 import GitHub from "../assets/Frame 4.svg";
-import HeroImage from "../assets/image (21).png";
+// import HeroImage from "../assets/image (21).png";
+import DesktopImage from "../assets/desktop.jpeg";
 import Experience from "./Experience";
 import MyCapabilities from "./MyCapabilities";
 import ContactMe from "./ContactMe";
@@ -130,18 +131,13 @@ const MoreAboutMe = () => {
 
           <div className="flex flex-col flex-1 space-y-6">
             <h2 className="text-[1.5rem] md:text-[2rem] text-[#FFFFFF] font-manrope font-medium">
-              I am a front-end developer based in Nigeria and have a
-              Biochemistry background.
+              I am a Software Engineer based in Nigeria.
             </h2>
 
             <p className="text-base md:text-lg text-[#C7C7C7] font-manrope">
-              I am a front-end developer based in Nigeria looking for exciting
-              opportunities. I have a Biochemistry background and like to focus
-              on proper design execution and accessibility when developing.
-              Passionate and curious about solving problems. Currently, I'm
-              exploring React, Webflow, Framer, and a bit of Python. While I am
-              not programming, I enjoy watching movies, reading, and exploring
-              the Web3 space to improve my skills.
+              Flutter developer focused on clean architecture, scalable state management, 
+           and high-quality mobile experiences. Experienced with Dart, Firebase, BLoC/Riverpod, 
+           and Material 3, with backend experience in Node.js, Express, MongoDB, and REST API design.
             </p>
 
             <div className="flex gap-3 pt-6">
@@ -179,7 +175,7 @@ const MoreAboutMe = () => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.6 }}
         >
-          <img src={HeroImage} alt="hero image" className="w-full h-auto" />
+          <img src={DesktopImage} alt="hero image" className="w-full h-auto" />
         </motion.div>
 
         <MyCapabilities />

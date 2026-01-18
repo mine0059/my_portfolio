@@ -47,9 +47,8 @@ const MyCapabilities = () => {
               className="font-manrope text-[#C7C7C7] text-base md:text-lg"
               variants={item}
             >
-              I am always looking to add more skills. Morbi egestas neque eu
-              blandit fermentum. Nulla ac lobortis ligula. Pellentesque ac ex at
-              purus faucibus tristique ut et dolor.
+              I publish applications, and maintain production code. I also build developer tools, 
+            including a publicly published modular Firebase authentication sdk which is present in pub.dev named auth_sdk..
             </motion.p>
 
             <motion.div
@@ -57,12 +56,15 @@ const MyCapabilities = () => {
               variants={container}
             >
               {[
-                "HTML",
-                "CSS",
-                "JAVASCRIPT",
-                "REACT",
-                "FIGMA",
-                "TAILWIND CSS",
+                "Dart",
+              "Flutter",
+              "Bloc",
+              "Firebase",
+              "FIGMA",
+              "Node.js",
+              "Express",
+              "MongoDB",
+              "REST API",
               ].map((tech) => (
                 <motion.button
                   key={tech}

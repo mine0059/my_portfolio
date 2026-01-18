@@ -34,16 +34,16 @@ const Experience = () => {
             className="flex flex-col gap-8 flex-1 pl-0 md:pl-64"
           >
             <MyExperience
-              position="Front-End Intern"
-              date="Sep 2023 — Nov 2023"
-              company="Roos Tech"
-              description="Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+              position="Software Engineer"
+              date="Nov 2024 — Present"
+              company="Bluetag Technology"
+              description="Work as a Frontend/Mobile developer for bluetag technology, architected a clean state management solution using Bloc for scalable data flow. and implemented modular UI components to enhance code reusability across multiple projects. Collaborated with cross-functional teams to deliver high-quality mobile applications on time."
             />
             <MyExperience
-              position="Freelance Developer"
-              date="Nov 2023 — Present"
-              company="CiTech"
-              description="Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+              position="Mobile Developer"
+              date="Nov 2025 — DEC 2025"
+              company="HNG Tech Internship"
+              description="Developed and maintained mobile applications using Flutter, ensuring high performance and responsiveness User-Agent chat for effective collaboration. Implemented state management solutions using Riverpod and provider to handle complex data flows efficiently. Collaborated with designers and backend developers to create seamless user experiences."
             />
           </motion.div>
         </div>

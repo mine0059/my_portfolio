@@ -2,9 +2,7 @@ import React from "react";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import IndividualProjects from "./IndividualProjects";
-import ProjectImage1 from "../assets/work.png";
-import ProjectImage2 from "../assets/image 10.png";
-import ProjectImage3 from "../assets/image 9.png";
+import { featuredProjects } from "../data/projects";
 
 const Projects = () => {
   return (
@@ -56,72 +54,37 @@ const Projects = () => {
             },
           }}
         >
-          <motion.div
-            variants={{
-              hidden: { opacity: 0, y: 30 },
-              visible: { opacity: 1, y: 0 },
-            }}
-          >
-            <IndividualProjects
-              projectname="Promotional landing page for our favorite show"
-              projectdescription="Teamed up with a designer to breathe life into a promotional webpage for our beloved show, Adventure Time. Delivered a fully responsive design with dynamic content capabilities, seamlessly integrating a newsletter feature to keep fans updated with the latest adventures."
-              client="WarnerMedia"
-              year="2023"
-              role="Front-end Developer"
-              projectimage={
-                <img
-                  src={ProjectImage1}
-                  alt="Project 1"
-                  className="max-w-full max-h-full object-contain"
-                />
-              }
-              // demoLink=""
-              // githubLink=""
-            />
-          </motion.div>
+          {featuredProjects.map((p, idx) => (
+            <motion.div
+              key={p.key}
+              variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0 } }}
+            >
+              <IndividualProjects
+                projectname={p.projectname}
+                projectdescription={p.projectdescription}
+                projectimages={p.images}
+                tools={p.tools}
+                demoLink={p.demoLink}
+                githubLink={p.githubLink}
+                autoplay
+                autoplayInterval={3500}
+              />
+            </motion.div>
+          ))}
 
+          {/* View more link placeholder - wire to /projects when page exists */}
           <motion.div
-            variants={{
-              hidden: { opacity: 0, y: 30 },
-              visible: { opacity: 1, y: 0 },
-            }}
+            className="mt-16 flex justify-center"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.8, duration: 0.6 }}
           >
-            <IndividualProjects
-              projectname="Blog site for World News"
-              projectdescription="Mastered CSS Grid complexities in building an innovative news homepage, navigating intricate design decisions for a seamless user experience. Leveraged the challenge to enhance skills in front-end development."
-              client="World News"
-              year="2022"
-              role="Front-end Developer"
-              projectimage={
-                <img
-                  src={ProjectImage2}
-                  alt="Project 2"
-                  className="max-w-full max-h-full object-contain"
-                />
-              }
-            />
-          </motion.div>
-
-          <motion.div
-            variants={{
-              hidden: { opacity: 0, y: 30 },
-              visible: { opacity: 1, y: 0 },
-            }}
-          >
-            <IndividualProjects
-              projectname="E-commerce product page"
-              projectdescription="Successfully crafted an engaging product page featuring a dynamic lightbox gallery and seamless cart functionality, showcasing proficiency in JavaScript development."
-              client="E-commerce"
-              year="2022"
-              role="Front-end Developer"
-              projectimage={
-                <img
-                  src={ProjectImage3}
-                  alt="Project 3"
-                  className="max-w-full max-h-full object-contain"
-                />
-              }
-            />
+            <a
+              href="/projects"
+              className="project-link text-[#D3E97A] font-manrope font-bold underline underline-offset-6"
+            >
+              View more projects
+            </a>
           </motion.div>
         </motion.div>
       </motion.div>

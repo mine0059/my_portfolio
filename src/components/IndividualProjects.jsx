@@ -1,10 +1,35 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import LiveDemo from "../assets/Vector.png";
 import GitHubCode from "../assets/Vector (1).png";
 import ProjectLink from "./ProjectsLink.jsx";
 
 const IndividualProjects = (props) => {
   const [isHovered, setIsHovered] = useState(false);
+  const [current, setCurrent] = useState(0);
+  const intervalRef = useRef(null);
+  const images = Array.isArray(props.projectimages) && props.projectimages.length > 0 ? props.projectimages : [];
+  const slideCount = images.length;
+
+  const startAutoplay = () => {
+    if (props.autoplay === false || slideCount <= 1) return;
+    stopAutoplay();
+    intervalRef.current = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % slideCount);
+    }, props.autoplayInterval || 3000);
+  };
+
+  const stopAutoplay = () => {
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+      intervalRef.current = null;
+    }
+  };
+
+  useEffect(() => {
+    startAutoplay();
+    return () => stopAutoplay();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [slideCount]);
 
   return (
     <div>
@@ -88,7 +113,7 @@ const IndividualProjects = (props) => {
         }
 
         .project-image-container:hover {
-          transform: scale(1.05) rotate(2deg);
+          transform: scale(1.02);
         }
 
         .project-details {
@@ -147,17 +172,65 @@ const IndividualProjects = (props) => {
 
       <div className="project-card flex flex-col gap-16 pt-16 md:flex md:flex-row md:justify-between md:items-center">
         <div
-          className="project-image-container border-animated bg-[#1A1A1A] w-[343px] h-[343px]
-            sm:w-[400px] sm:h-[400px]
-            md:w-[500px] md:h-[500px]
-            lg:w-[600px] lg:h-[600px]
-            rounded-xl flex justify-center items-center mx-auto md:mx-0"
+          className="project-image-container border-animated bg-[#1A1A1A] w-full max-w-[343px] h-[343px]
+            sm:max-w-[400px] sm:h-[400px]
+            md:max-w-[500px] md:h-[500px]
+            lg:max-w-[600px] lg:h-[600px]
+            rounded-xl flex justify-center items-center mx-auto md:mx-0 overflow-hidden relative"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
+          onFocus={stopAutoplay}
+          onBlur={startAutoplay}
         >
-          <div className={isHovered ? "floating-image" : ""}>
-            {props.projectimage}
-          </div>
+          {slideCount > 0 ? (
+            <div className="relative w-full h-full">
+              <div
+                className="absolute inset-0 flex transition-transform duration-500 ease-out"
+                style={{ transform: `translateX(-${current * 100}%)` }}
+              >
+                {images.map((img, idx) => (
+                  <div key={idx} className="w-full h-full flex-shrink-0 flex items-center justify-center p-6">
+                    <img
+                      src={img.src}
+                      alt={img.alt || `${props.projectname} image ${idx + 1}`}
+                      className="max-w-full max-h-full object-contain"
+                      loading={idx === 0 ? "eager" : "lazy"}
+                    />
+                  </div>
+                ))}
+              </div>
+
+              <button
+                type="button"
+                aria-label="Previous slide"
+                className="absolute left-2 top-1/2 -translate-y-1/2 bg-[#0F0F0F]/70 text-white rounded-full w-9 h-9 flex items-center justify-center hover:bg-[#1A1A1A]/90 transition"
+                onClick={() => setCurrent((prev) => (prev - 1 + slideCount) % slideCount)}
+              >
+                ‹
+              </button>
+              <button
+                type="button"
+                aria-label="Next slide"
+                className="absolute right-2 top-1/2 -translate-y-1/2 bg-[#0F0F0F]/70 text-white rounded-full w-9 h-9 flex items-center justify-center hover:bg-[#1A1A1A]/90 transition"
+                onClick={() => setCurrent((prev) => (prev + 1) % slideCount)}
+              >
+                ›
+              </button>
+
+              <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2">
+                {images.map((_, idx) => (
+                  <button
+                    key={idx}
+                    aria-label={`Go to slide ${idx + 1}`}
+                    onClick={() => setCurrent(idx)}
+                    className={`w-2.5 h-2.5 rounded-full transition ${current === idx ? "bg-[#D3E97A]" : "bg-[#484848]"}`}
+                  />
+                ))}
+              </div>
+            </div>
+          ) : (
+            <div className={isHovered ? "floating-image" : ""}>{props.projectimage}</div>
+          )}
         </div>
 
         <div className="project-details font-manrope py-10 md:flex-1 md:pl-36 text-justify">
@@ -176,49 +249,44 @@ const IndividualProjects = (props) => {
             className="border-b border-b-[#484848] opacity-0"
             style={{ animation: "fadeInUp 0.8s ease-out 0.3s forwards" }}
           >
-            <h2 className="font-semibold text-[#FFFFFF] pb-7">PROJECT INFO</h2>
+            <h2 className="font-semibold text-[#FFFFFF] pb-7">TOOLS USED</h2>
           </div>
 
           <div
-            className="info-row flex justify-between font-medium text-[#C7C7C7] border-b border-b-[#484848] py-7 opacity-0"
+            className="flex flex-wrap gap-3 py-7 opacity-0"
             style={{ animation: "fadeInUp 0.8s ease-out 0.4s forwards" }}
           >
-            <p>Client</p>
-            <p>{props.client}</p>
+            {(props.tools || []).map((tool, idx) => (
+              <span
+                key={idx}
+                className="inline-flex items-center gap-2 px-3 py-2 rounded-full border border-[#484848] text-[#C7C7C7] text-sm hover:border-[#D3E97A] hover:text-white transition"
+              >
+                <span className="inline-block w-2.5 h-2.5 rounded-full bg-[#D3E97A]"></span>
+                {tool}
+              </span>
+            ))}
           </div>
 
           <div
-            className="info-row flex justify-between font-medium text-[#C7C7C7] border-b border-b-[#484848] py-7 opacity-0"
-            style={{ animation: "fadeInUp 0.8s ease-out 0.5s forwards" }}
-          >
-            <p>Year</p>
-            <p>{props.year}</p>
-          </div>
-
-          <div
-            className="info-row flex justify-between font-medium text-[#C7C7C7] border-b border-b-[#484848] py-7 opacity-0"
+            className="flex gap-6 pt-2 opacity-0"
             style={{ animation: "fadeInUp 0.8s ease-out 0.6s forwards" }}
           >
-            <p>Role</p>
-            <p>{props.role}</p>
-          </div>
-
-          <div
-            className="flex gap-6 pt-8 opacity-0"
-            style={{ animation: "fadeInUp 0.8s ease-out 0.7s forwards" }}
-          >
-            <ProjectLink
-              href={props.demoLink}
-              text="LIVE DEMO"
-              imgSrc={LiveDemo}
-              alt="view project demo"
-            />
-            <ProjectLink
-              href={props.githubLink}
-              text="SEE ON GITHUB"
-              imgSrc={GitHubCode}
-              alt="view project code"
-            />
+            {props.demoLink && (
+              <ProjectLink
+                href={props.demoLink}
+                text="LIVE DEMO"
+                imgSrc={LiveDemo}
+                alt="view project demo"
+              />
+            )}
+            {props.githubLink && (
+              <ProjectLink
+                href={props.githubLink}
+                text="SEE ON GITHUB"
+                imgSrc={GitHubCode}
+                alt="view project code"
+              />
+            )}
           </div>
         </div>
       </div>

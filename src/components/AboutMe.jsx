@@ -49,8 +49,7 @@ const AboutMe = () => {
             }}
             className="font-manrope text-[#FFFFFF] text-2xl md:text-[2rem] font-medium text-justify"
           >
-            I am a front-end developer based in Nigeria and have a Biochemistry
-            background.
+            I am a Software Engineer based in Nigeria.
           </motion.h2>
 
           <motion.p
@@ -60,13 +59,9 @@ const AboutMe = () => {
             }}
             className="font-manrope text-[#C7C7C7] text-base md:text-lg text-justify"
           >
-            I am a front-end developer based in Nigeria looking for exciting
-            opportunities. Has Biochemistry background. Likes to focus on proper
-            design execution and accessibility when developing. Passionate and
-            curious about solving problems. Currently, I'm exploring React,
-            Webflow, Framer and a bit of Python. While I am not programming, I
-            enjoy watching Movies, Reading and Exploring the Web3 Space.
-            Learning more to improve skill.
+           Flutter developer focused on clean architecture, scalable state management, 
+           and high-quality mobile experiences. Experienced with Dart, Firebase, BLoC/Riverpod, 
+           and Material 3, with backend experience in Node.js, Express, MongoDB, and REST API design.
           </motion.p>
 
           <motion.h2
@@ -86,9 +81,8 @@ const AboutMe = () => {
             }}
             className="font-manrope text-[#C7C7C7] text-base md:text-lg text-justify"
           >
-            I am always looking to add more skills. Morbi egestas neque eu
-            blandit fermentum. Nulla ac lobortis ligula. Pellentesque ac ex at
-            purus faucibus tristique ut et dolor.
+            I publish applications, and maintain production code. I also build developer tools, 
+            including a publicly published modular Firebase authentication sdk which is present in pub.dev named auth_sdk.
           </motion.p>
 
           <motion.div
@@ -102,12 +96,15 @@ const AboutMe = () => {
             }}
           >
             {[
-              "HTML",
-              "CSS",
-              "JAVASCRIPT",
-              "REACT",
+              "Dart",
+              "Flutter",
+              "Bloc",
+              "Firebase",
               "FIGMA",
-              "TAILWIND CSS",
+              "Node.js",
+              "Express",
+              "MongoDB",
+              "REST API",
             ].map((tech) => (
               <motion.button
                 key={tech}
