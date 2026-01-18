@@ -70,7 +70,7 @@ export const featuredProjects = [
     ],
     tools: ["Flutter", "Dart", "Bloc", "Clean Architecture", "Firebase", "Node.js", "Express", "Cloudinary"],
     demoLink: undefined,
-    githubLink: undefined,
+    githubLink: 'https://github.com/mine0059/whasapp_clone',
   },
   {
     key: "agent",
@@ -106,7 +106,7 @@ export const allProjects = [
     ],
     tools: ["Flutter", "Dart", "Firebase Auth", "Bloc", "State Management"],
     demoLink: undefined,
-    githubLink: undefined,
+    githubLink: 'https://github.com/mine0059/auth_sdk',
   },
   {
     key: "store",
@@ -121,7 +121,7 @@ export const allProjects = [
     ],
     tools: ["Flutter", "Dart", "SQLite", "Camera Integration"],
     demoLink: undefined,
-    githubLink: undefined,
+    githubLink: 'https://github.com/mine0059/hng_mobile',
   },
   {
     key: "wallet",
@@ -136,7 +136,7 @@ export const allProjects = [
     ],
     tools: ["Flutter", "Dart", "Chart_sparkline", "Hive"],
     demoLink: undefined,
-    githubLink: undefined,
+    githubLink: 'https://github.com/mine0059/wallpaper_studio',
   },
   {
     key: "quiz",
