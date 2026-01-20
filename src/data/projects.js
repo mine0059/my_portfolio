@@ -46,7 +46,7 @@ export const featuredProjects = [
     key: "strag",
     projectname: "Strag - Mobile App",
     projectdescription:
-      "Cross-platform mobile app. Includes onboarding, messaging, and responsive UI tuned for mobile viewport sizes.",
+      "Cross-platform Transport system mobile app. focusing on data flows, vehicle tracking, and user management. Built with Flutter and follows Clean Architecture principles for maintainability and scalability.",
     images: [
       { src: strag1, alt: "Strag screen 1" },
       { src: strag2, alt: "Strag screen 2" },
