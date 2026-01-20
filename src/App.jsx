@@ -6,6 +6,9 @@ import ContactMe from "./components/ContactMe";
 import MoreAboutMe from "./components/MoreAboutMe";
 import { Route, Routes } from "react-router-dom";
 import AllProjects from "./pages/AllProjects";
+import Intro from "./components/Intro";
+import Mine from "./components/Mine";
+import Navigation from "./components/Navigation";
 
 const App = () => {
   return (
@@ -15,15 +18,34 @@ const App = () => {
           path="/"
           element={
             <>
-              <Navbar />
+              <Navigation />
+              {/* <Navbar /> */}
+              <Intro />
+              <Mine />
               <Projects />
               <AboutMe />
               <ContactMe />
             </>
           }
         />
-        <Route path="/more-about-me" element={<MoreAboutMe />} />
-        <Route path="/projects" element={<AllProjects />} />
+        <Route
+          path="/more-about-me"
+          element={
+            <>
+              <Navigation />
+              <MoreAboutMe />
+            </>
+          }
+        />
+        <Route
+          path="/projects"
+          element={
+            <>
+              <Navigation />
+              <AllProjects />
+            </>
+          }
+        />
       </Routes>
     </div>
   );
