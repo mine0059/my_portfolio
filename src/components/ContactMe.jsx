@@ -30,7 +30,7 @@ const ContactMe = () => {
             variants={fadeUp}
             className="font-bebas text-[2.6875rem] pb-4 md:text-[4.75rem] text-[#FFFFFF] leading-none"
           >
-            LET'S CONNECT
+            Get in Touch
           </motion.h1>
 
           <motion.p
@@ -63,21 +63,34 @@ const ContactMe = () => {
           >
             For more info, here's my{" "}
             <motion.div
-              className="inline-block"
-              whileHover={{
-                scaleX: 1.05,
-                originX: 0,
-                color: "#e4ff83",
-              }}
+              className="inline-flex items-center gap-3"
+              whileHover={{ scale: 1.02, originX: 0 }}
               transition={{ type: "spring", stiffness: 200 }}
             >
-              {" "}
               <a
-                href="mailto:oghenemineemma@gmail.com"
+                href="/resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-[#FFFFFF] underline underline-offset-6 decoration-[#D3E97A]"
+                aria-label="View Resume"
               >
-                resume
+                view resume
               </a>
+              <button
+                type="button"
+                onClick={() => {
+                  const a = document.createElement('a');
+                  a.href = '/resume.pdf';
+                  a.download = 'Oghenemine_Resume.pdf';
+                  document.body.appendChild(a);
+                  a.click();
+                  document.body.removeChild(a);
+                }}
+                className="text-[#D3E97A] text-sm underline underline-offset-4"
+                aria-label="Download Resume"
+              >
+                download
+              </button>
             </motion.div>
           </motion.p>
 
