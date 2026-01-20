@@ -7,7 +7,7 @@ import { featuredProjects } from "../data/projects";
 const Projects = () => {
   return (
     <motion.section
-      id="work"
+      id="works"
       className="pt-20"
       initial={{ opacity: 0, y: 40 }}
       animate={{ opacity: 1, y: 0 }}
@@ -54,7 +54,7 @@ const Projects = () => {
             },
           }}
         >
-          {featuredProjects.map((p, idx) => (
+          {featuredProjects.map((p) => (
             <motion.div
               key={p.key}
               variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0 } }}
