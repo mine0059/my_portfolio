@@ -3,6 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import IndividualProjects from "./IndividualProjects";
 import { featuredProjects } from "../data/projects";
+import { Link } from "react-router-dom";
 
 const Projects = () => {
   return (
@@ -79,12 +80,12 @@ const Projects = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 0.6 }}
           >
-            <a
-              href="/projects"
+            <Link
+              to="/projects"
               className="project-link text-[#D3E97A] font-manrope font-bold underline underline-offset-6"
             >
               View more projects
-            </a>
+            </Link>
           </motion.div>
         </motion.div>
       </motion.div>
